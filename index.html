@@ -6,14 +6,16 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
-      document.write(5 + 6);
-    </script>
-    <p>
-      Never call document.write after the document has finished loading. It will
-      overwrite the whole document.
-    </p>
+    <p>Finding HTML Elements by Class Name.</p>
+    <form id="frm1" action="/action_page.php">
+      First name: <input type="text" name="fname" value="Donald" /><br />
+      Second name: <input type="text" name="fname" value="John" /><br />
+      Last name: <input type="text" name="lname" value="Duck" /><br /><br />
+      <input type="submit" value="Cancel" />
+    </form>
 
-    <script src="./js/Js_Async/Js_Async_Await.js"></script>
+    <p id="demo"></p>
+
+    <script src="./js/Js_DOM/Js_DOM_Elements.js"></script>
   </body>
 </html>
