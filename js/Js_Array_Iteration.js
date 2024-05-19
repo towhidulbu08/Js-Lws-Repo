@@ -1,3 +1,20 @@
+/**
+ * Array Iteration Methods:
+ * 1. Array forEach()
+ * 2.Array map()
+ * 3.Array flatMap()
+ * 4.Array filter()
+ * 5.Array reduce()
+ * 6.Array reduceRight()
+ * 7.Array every()
+ * 8.Array some()
+ * 9.Array from()
+ * 10.Array keys()
+ * 11.Array entries()
+ * 12.Array with()
+ * 13.Array Spread (...)
+ */
+
 //const numbers = [45, 4, 9, 16, 25];
 
 // const iterate = numbers.forEach((value, index, numbers) => {
