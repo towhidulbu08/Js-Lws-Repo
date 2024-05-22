@@ -1,15 +1,24 @@
-class Car {
-  constructor(name, year) {
+class Person {
+  constructor(name, age) {
     this.name = name;
-    this.year = year;
+    this.age = age;
   }
-  age(x) {
-    const date = new Date();
-    return x - this.year;
+  eat() {
+    console.log(`${this.name} is eating`);
   }
 }
 
-const myCar = new Car("Bmw");
-console.log(myCar.age());
-//console.log(myCar.age(2024));
-//console.log(typeof Car);
+class Cricketer extends Person {
+  constructor(name, age, type, country) {
+    super(name, age);
+    this.type = type;
+    this.country = country;
+  }
+  eat() {
+    super.eat();
+    console.log(`${this.name} is eating Kacchi Biryani`);
+  }
+}
+
+const sakib = new Cricketer("Tamim", 34, "cricketer", "Bangladesh");
+console.log(sakib.eat());

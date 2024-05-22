@@ -1,4 +1,7 @@
-//const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+console.log(function () {}.toString()); // dy default separated values by comma
+//console.log(fruits.join());// you can modify se
 
 // console.log(fruits.join("!"));
 // let fruit = fruits.at(2);
@@ -45,6 +48,6 @@
 // console.log(spliced);
 // console.log(months);
 
-const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-const citrus = fruits.slice(1);
-console.log(citrus, fruits);
+//const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+//const citrus = fruits.slice(1);
+// console.log(citrus, fruits);
