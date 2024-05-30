@@ -19,6 +19,8 @@
 //console.log("5" - null);
 
 //console.log({ name: "tamim" }.toString());
-console.log(Number([0]));
+//console.log(Number([0]));
 
 //console.log([].toString());
+
+console.log(parseFloat("3"));

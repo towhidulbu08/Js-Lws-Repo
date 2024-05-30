@@ -38,7 +38,19 @@ language.libraries.push("Jquery");
 // console.log(language2);
 
 /**
- * copy nested references immutably
+ *  copy nested references immutably
  *  primitive wrapper type(new String, new Number)
  *  pass by references/value
  */
+
+const a = 1;
+
+let change = (val) => {
+  val = ++val; // assignment
+  // Note: function parameter automatically treated as local variable within function scope .You do not need to use let, const, or var for parameters.
+
+  console.log(a, val);
+};
+change(a); // here a pass by reference
+
+console.log(a);
