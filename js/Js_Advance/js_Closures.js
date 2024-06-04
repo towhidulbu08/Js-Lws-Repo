@@ -1,39 +1,21 @@
 // A closure is a function having access to the parent scope, even after the parent function has closed.
 
-function stopWatch() {
-  var startTime = Date.now();
+// Closures are functions that refer to independent (free) variables (variable that are used locally but defined in an enclosing scope). In other words, these functions remembered the environment in which they were created  [Mdn Doc (Old version)]
 
-  function getDelay() {
-    console.log(Date.now() - startTime);
-  }
-  return getDelay;
-}
+(function () {
+  var num1 = 2;
+  var num2 = 3;
 
-//var timer = stopWatch();
-//console.dir(timer);
+  var sum = function () {
+    return num1 + num2;
+  };
 
-// for (var i = 0; i < 100000000; i++) {
-//   var a = Math.random() * 1000000;
-// }
-// timer();
-// timer = null;
-// var a;
-// function async() {
-//   a = 20;
-//   function myFunc() {
-//     console.log(a);
-//   }
-//   setTimeout(myFunc, 3000);
-//   console.dir(myFunc);
-// }
+  console.log(sum());
+  console.dir(sum);
 
-// async();
-// a = 30;
+  num1 = 5;
+  num2 = 7;
 
-function api(url) {
-  fetch(url).then((res) => {
-    console.log(url);
-  });
-}
-
-api("https://jsonplaceholder.typicode.com/todos/1");
+  console.log(sum());
+  console.dir(sum);
+})();

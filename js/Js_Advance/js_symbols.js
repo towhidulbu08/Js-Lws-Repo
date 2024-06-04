@@ -2,7 +2,63 @@
 
 // Every Symbol is Unique
 
+var title = "Javascript";
+
+// 1. title converts into new  String("Javascript")
+// 2. convert parameter (/script/) into RegExp object
+// 3. RegExp er moddhe Symbol.search() er implementation ache kina
+
+//console.log(title.search(/script/));
+
+function myFunc() {
+  const PVT = Symbol("Private Value");
+
+  return {
+    modify(obj) {
+      obj[PVT] = true;
+    },
+    output(obj) {
+      return obj[PVT];
+    },
+  };
+}
+
+const value = myFunc();
+
+const obj = { a: 1, b: 2 };
+
+value.modify(obj);
+console.log(value.output(obj));
+console.log(obj);
+
+delete obj["Symbol(Private Value)"];
+console.log(obj);
+
 // var obj = {};
+
+// class Product {
+//   constructor(title) {
+//     this.title = title;
+//   }
+
+//   // implement search
+
+//   [Symbol.search](string) {
+//     return string.indexOf(this.title) >= 0 ? "Found" : "Not  found";
+//   }
+// }
+
+// var laptop = new Product("laptop");
+
+// const laptop = {
+//   title: "laptop",
+//   [Symbol.search](string) {
+//     return string.indexOf(this.title) >= 0 ? "Found" : "Not  found";
+//   },
+// };
+
+// console.log("Hp laptop".search(laptop));
+// console.log("Hp laptop".search("laptop"));
 
 // obj.name = "Js";
 // obj.estd = 1995;
@@ -10,15 +66,15 @@
 
 // console.log(Object.keys(obj));
 
-var myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+// var myArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-var includes = Symbol.for("my own array includes method");
+// var includes = Symbol.for("my own array includes method");
 
-Array.prototype[includes] = () => {
-  console.log("This is my array includes function");
-};
+// Array.prototype[includes] = () => {
+//   console.log("This is my array includes function");
+// };
 //var a = "includes";
-myArr[Symbol.for("my own array includes method")]();
+//myArr[Symbol.for("my own array includes method")]();
 //console.log(myArr["includes"](3));
 //console.log(myArr[a](3));
 
