@@ -1,128 +1,74 @@
-// Promises= An Object that manages asynchronous operations.
-//      Wrap a Promise Object around the code (asynchronous code)
-//     " I Promise To Return a Value"
-//      Pending=> resolved or rejected
-//      new Promise ((resolve,rejected)=> {asynchronous code})
+// Promises Are used to handle async operations in js
 
-// const paymentSuccess = "s";
-// const marks = 70;
+/**
+ * A Promise is An Object representing the eventual completion or failure of an asynchronous operation
+ *
+ */
 
-// function enroll() {
-//   console.log("Course enrollment is in progress");
-//   const promise = new Promise((resolve, reject) => {
-//     setTimeout(function () {
-//       if (paymentSuccess) {
-//         resolve();
-//       } else {
-//         reject("Payment Failed");
-//       }
-//     }, 2000);
-//   });
+/*
 
-//   return promise;
-// }
+Asynchronous Operation: This is an action that takes some time to complete, and the program doesn't wait for it to finish before moving on. Examples include fetching data from the internet, reading a file, or waiting for user input.
 
-// function progress() {
-//   console.log("Course On Progress");
-//   const promise = new Promise((resolve, reject) => {
-//     setTimeout(function () {
-//       if (marks >= 80) {
-//         resolve();
-//       } else {
-//         reject("You could not enough mark to get the certificate");
-//       }
-//     }, 3000);
-//   });
-//   return promise;
-// }
+Eventual Completion or Failure: A Promise represents the eventual outcome of this operation. It can either be successful (completed) or unsuccessful (failed).
+Think of it like ordering a pizza. You place the order (initiate the asynchronous operation), and you get a promise (the confirmation) that you'll eventually receive the pizza (completion) or be notified if there's an issue (failure).
 
-// function getCertificate() {
-//   console.log("Preparing Your certificate");
+Key Points about Promises:
 
-//   const promise = new Promise((resolve) => {
-//     setTimeout(function () {
-//       resolve("Congrats you got the certificate");
-//     }, 4000);
-//   });
-//   return promise;
-// }
+1.States: A Promise can be in three
+ states:
 
-// enroll()
-//   .then(progress)
-//   .then(getCertificate)
-//   .then((value) => console.log(value))
-//   .catch((error) => console.log(error));
+i.Pending: The initial state, waiting for the operation to finish.
 
-// const status = "";
+ii.Fulfilled: The operation completed successfully, and the Promise holds the result.
 
-// console.log("Task 1");
-// //promise definition
-// const promise = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     if (status) {
-//       resolve(123);
-//     } else {
-//       reject("error");
-//     }
-//   }, 2000);
-// });
-// // promise
-// //   .then((value) => console.log(value))
-// //   .catch((error) => console.log(error));
-// //promise call
-// promise.then(
-//   (value) => console.log(value),
-//   (error) => console.log(error)
-// );
+iii.Rejected: The operation failed, and the Promise holds the reason for the failure.
 
-// console.log("Task 3");
+2.Callbacks: You can attach callbacks (functions) to a Promise to handle its eventual outcome. One callback is for success (called ".then()"), and another is for failure (called ".catch()").
+ */
 
-function walkTheDog() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const dogWalked = true;
-      if (dogWalked) {
-        resolve("You Walk The Dog");
-      } else {
-        reject("You did't walked the Dog");
-      }
-    }, 1500);
+const cart = ["shoes", "pants", "kurta"];
+
+createOrder(cart, function (orderId) {
+  proceedToPayment(orderId, (paymentInfo) => {
+    showOrderSummary(paymentInfo, () => {
+      updateWalletBalance();
+    });
   });
-}
-function cleanTheKitchen() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const cleanKitchen = true;
-      if (cleanKitchen) {
-        resolve("You clean The Kitchen");
-      }
-      reject("You did't cleaned the kitchen");
-    }, 2000);
-  });
-}
-function takeOutTheTrash() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const takeTrash = false;
-      if (takeTrash) {
-        resolve("You takeOut  The Trash");
-      }
-      reject("You did't takeOut The Trash");
-    }, 500);
-  });
-}
+}); // here create an inversion of control
 
-walkTheDog()
-  .then((value) => {
-    console.log(value);
-    return cleanTheKitchen();
-  })
-  .then((value) => {
-    console.log(value);
-    return takeOutTheTrash();
-  })
-  .then((value) => {
-    console.log(value);
-    console.log("All task are finished");
-  })
-  .catch((error) => console.error(error));
+createOrder(cart)
+  .then((orderId) => proceedToPayment(orderId))
+  .then((paymentInfo) => showOrderSummary(paymentInfo))
+  .then(() => updateWalletBalance());
+
+//Promise is nothing but an empty object with data value in it
+
+//{data:undefined}=> initial state(pending) => empty object
+//{data: value} => After resolve or reject promise object will filled with data automatically
+
+// as soon as we have data inside promise object it will call function inside .then() just once
+
+// promise.then((orderId) => {
+//   proceedToPayment(orderId);
+// }); // attaching an callback into promise object
+
+/*
+     Note: Promise Objects are immutable
+*/
+
+// fetch return a promise
+// fetch is a api which given by browser to us to make external call
+
+const GITHUB_API = "https://api.github.com/users/akshaymarch7";
+
+const user = fetch(GITHUB_API);
+console.dir(user);
+
+user.then((data) => {
+  console.log(data);
+});
+
+/*
+1. what is a promise?
+2. Why Promises are Important? Why do you use Promises?
+*/

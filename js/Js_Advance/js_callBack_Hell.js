@@ -37,6 +37,8 @@ api.createOrder(cart, function () {
 // 1.Importance of CallBacks: Asynchronous Programming In Js Exits Because Of CallBack
 
 /* 2.Issues Of CallBacks:
-i. CallBack Hell:Callback Hell, also known as the Pyramid of Doom, is a situation where callbacks are nested within other callbacks multiple levels deep, making the code hard to read and maintain. This often happens when dealing with asynchronous operations like network requests, file I/O, or timers.
-ii. Inversion Of Control: 
+
+i. CallBack Hell: Callback Hell, also known as the Pyramid of Doom, is a situation where callbacks are nested within other callbacks multiple levels deep, making the code hard to read and maintain. This often happens when dealing with asynchronous operations like network requests, file I/O, or timers.
+
+ii. Inversion Of Control: Inversion of Control (IoC) is a design principle where the control of the program's flow is inverted. Instead of the developer controlling the flow, control is passed to a framework or library. In the context of callbacks, IoC occurs when a function is passed as an argument to another function, which then controls when and how the callback is executed.
 */

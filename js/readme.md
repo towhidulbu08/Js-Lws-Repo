@@ -30,12 +30,13 @@
 
               05/06/24
 
-21. Project 01
-22. Currying
-23. Problem Solving
+21. Promise Chaining
+22. Async-Await;
+23. Prototype;
+24. Prototype Inheritance;
 
               06/06/24
 
-24. Project 02
-25. Debounce
-26. Project 03
+25. Project 02
+26. Debounce
+27. Project 03
