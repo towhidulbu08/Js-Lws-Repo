@@ -40,3 +40,10 @@
 25. Project 02
 26. Debounce
 27. Project 03
+
+                   08/06/24
+
+28. Destructuring , Rest Operator
+29. Web APIs
+30. Block Scope
+31. Let , var And Const
